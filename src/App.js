@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Helmet} from "react-helmet";
 import './App.css';
 
 
@@ -60,12 +61,12 @@ function Board (){
     if (x === 1){
       updateColor("red");
       updatePlayer1Points(player1Points + 1);
-      return "Red Winns !!";
+      return "Player 1 Wins !!";
     }
     else{
       updateColor("blue");
       updatePlayer2Points(player2Points + 1);
-      return "Blue Winns !!";
+      return "Player 2 Wins !!";
     }
   }
 
@@ -189,13 +190,13 @@ function Board (){
       <button className="btn" onClick={newBoard}>New Game</button>
       <button className="btnReset" onClick={resetPoints}>Reset</button>
       </div>
-      <div className="points"><b><span style={{color: "red"}}>Player 1:</span> <span style={{fontSize: "30px"}}>{player1Points}</span> - <span style={{fontSize: "30px"}}>{player2Points}</span> <span style={{color: "blue"}}>:Player 2</span></b></div>
+      <div className="points"><b><span style={{color: "red"}}>Player 1 :</span> <span style={{fontSize: "30px"}}>{player1Points}</span> - <span style={{fontSize: "30px"}}>{player2Points}</span> <span style={{color: "blue"}}>: Player 2</span></b></div>
       <table className="table" disabled={gameOver}>
         <tbody>
           {table}
         </tbody>
       </table>
-      <div className="message" style={{color: color}}>{message}</div>
+      <div className="message" style={{color: color}}><b>{message}</b></div>
       </>
     );
     
@@ -206,9 +207,14 @@ function Board (){
 function App () {
   
     return (
+      <>
+      <Helmet>
+        <title>Connect 4 - Labb 4 AvJs</title>
+      </Helmet>
       <div className="App">
         <Board/>
       </div>
+      </>
     );
   
 }
