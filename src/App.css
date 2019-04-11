@@ -1,5 +1,6 @@
 body{
     background-color: #252c24;
+    background-image: url(./back.jpg)
 }
 h1{
     position: absolute;
@@ -9,7 +10,7 @@ h1{
     color: white;
     background-image: linear-gradient(to right bottom, #01460c, #07530d, #10610e, #1a6f0d, #257d0a, #257d0a, #257d0a, #257d0a, #1a6f0d, #10610e, #07530d, #01460c);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    width: 200px;
+    width: 400px;
     text-align: center;
     border-radius: 5px;
     -webkit-text-stroke: 0.7px #252c24;
@@ -52,6 +53,7 @@ h1{
     top: 100px;
     left: 53%;
     transform: translate(-53%, 0%);
+    
 }
 .points{
     position: absolute;
@@ -61,6 +63,10 @@ h1{
     color: white;
     font-size: 25px;
     -webkit-text-stroke: 0.5px white;
+    width: 320px;
+    text-align: center;
+    background-image: linear-gradient(to right bottom, #01460c, #07530d, #10610e, #1a6f0d, #257d0a, #257d0a, #257d0a, #257d0a, #1a6f0d, #10610e, #07530d, #01460c);
+    border-radius: 5px;
 }
 .table{
     position: relative;

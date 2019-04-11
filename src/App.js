@@ -186,7 +186,7 @@ function Board (){
     const table = board.map(renderBoard);
     return(
       <>
-      <h1>Connect 4</h1>
+      <h1>Connect 4 - Labb 4 AvJs</h1>
       <div className="buttons">
       <button className="btn" onClick={newBoard}>New Game</button>
       <button className="btnReset" onClick={resetPoints}>Reset</button>
@@ -200,10 +200,7 @@ function Board (){
       <div className="message" style={{color: color}}><b>{message}</b></div>
       </>
     );
-    
-  
 }
-
 
 function App () {
   
