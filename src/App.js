@@ -13,7 +13,7 @@ function Board (){
   const [board, updateBoard] = useState([]);
   const [gameOver, updateGameOver] = useState(false);
   const [message, updateMessage] = useState("");
-  const [color, updateColor] = useState("");
+  const [color, updateColor] = useState("white");
 
   useEffect(() =>{
     newBoard();
@@ -23,6 +23,7 @@ function Board (){
     updatecurrentPlayer(player2);
     updateMessage("");
     updateGameOver(false);
+    updateColor("white");
     let newBoard = [];
     for (let row = 0; row < 7; row++){
       let rows = [];
@@ -139,7 +140,7 @@ function Board (){
       }
     }
     updateGameOver(true)
-    updateMessage("Draw")   
+    updateMessage("Draw !!")   
   }
   const resetPoints = () =>{
     updatePlayer1Points(0)
