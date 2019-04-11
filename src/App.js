@@ -146,6 +146,7 @@ function Board (){
     updatePlayer2Points(0)
     newBoard()
   }
+
   const renderBoard = (row, index) =>{
     let redDiv = <div style={{ backgroundImage: "radial-gradient(circle, #340101, #630011, #960015, #ca0013, #ff0000)"}} id={trCount.toString() + (index)} className="div" onClick={press}/>
     let blueDiv = <div style={{ backgroundImage: "radial-gradient(circle, #010134, #001164, #001697, #0015cb, #2c00ff)"}} id={trCount.toString() + (index)} className="div" onClick={press}/>
