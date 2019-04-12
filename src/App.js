@@ -161,6 +161,8 @@ function Board (props){
         }
       }
     }
+    updatePlayer1Points(player1Points + 1);
+    updatePlayer2Points(player2Points + 1);
     updateGameOver(true)
     updateMessage("Draw !!") 
     updateTurn("black");
