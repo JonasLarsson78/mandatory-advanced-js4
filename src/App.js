@@ -15,6 +15,7 @@ function Board (props){
   const [message, updateMessage] = useState("");
   const [color, updateColor] = useState("white");
   const [turn, updateTurn] = useState("red");
+  const [playerName, updatePlayerName] = useState("");
 
   useEffect(() =>{
     newBoard();
@@ -26,6 +27,7 @@ function Board (props){
     updateGameOver(false);
     updateColor("white");
     updateTurn("red")
+    updatePlayerName(props.name1)
     let newBoard = [];
     for (let row = 0; row < 7; row++){
       let rows = [];
@@ -41,9 +43,11 @@ function Board (props){
   const press = (e) =>{
     if (turn === "red"){
       updateTurn("blue")
+      updatePlayerName(props.name2)
     }
     else{
       updateTurn("red")
+      updatePlayerName(props.name1)
     }
     
    updatecurrentPlayer(currentPlayer === player1 ? player2 : player1)
@@ -91,6 +95,7 @@ function Board (props){
                 updateGameOver(true);
                 updateMessage(winMess(board[r][c]));
                 updateTurn("black");
+                updatePlayerName("");
           }
         }
       }
@@ -107,6 +112,7 @@ function Board (props){
                 updateGameOver(true)
                 updateMessage(winMess(board[r][c]));
                 updateTurn("black");
+                updatePlayerName("");
           }
         }
       }
@@ -123,6 +129,7 @@ function Board (props){
                 updateGameOver(true);
                 updateMessage(winMess(board[r][c]));
                 updateTurn("black");
+                updatePlayerName("");
           }
         }
       }
@@ -139,6 +146,7 @@ function Board (props){
                 updateGameOver(true)
                 updateMessage(winMess(board[r][c]));
                 updateTurn("black");
+                updatePlayerName("");
           }
         }
       }
@@ -155,7 +163,8 @@ function Board (props){
     }
     updateGameOver(true)
     updateMessage("Draw !!") 
-    updateTurn("black");  
+    updateTurn("black");
+    updatePlayerName("");  
   }
   const resetPoints = () =>{
     updatePlayer1Points(0)
@@ -209,7 +218,7 @@ function Board (props){
       <button className="btn" onClick={newBoard}>New Game</button>
       <button className="btnReset" onClick={resetPoints}>Reset</button>
       </div>
-      <div className="turn" style={{backgroundColor: turn}}><b>Turn</b></div>
+      <div className="turn" style={{backgroundColor: turn}}><b>{playerName}</b></div>
       <div className="points"><b><span style={{color: "red"}}>{props.name1} :</span> <span style={{fontSize: "30px"}}>{player1Points}</span> - <span style={{fontSize: "30px"}}>{player2Points}</span> <span style={{color: "blue"}}>: {props.name2}</span></b></div>
       <table className="table" disabled={gameOver}>
         <tbody>
