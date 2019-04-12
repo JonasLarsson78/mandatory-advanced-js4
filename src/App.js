@@ -149,13 +149,13 @@ function Board (props){
   }
 
   const renderBoard = (row, index) =>{
-    let redDiv = <div style={{ backgroundImage: "radial-gradient(circle, #340101, #630011, #960015, #ca0013, #ff0000)"}} id={trCount.toString() + (index)} className="div" onClick={press}/>
-    let blueDiv = <div style={{ backgroundImage: "radial-gradient(circle, #010134, #001164, #001697, #0015cb, #2c00ff)"}} id={trCount.toString() + (index)} className="div" onClick={press}/>
+    let redDiv = <div style={{ backgroundImage: "radial-gradient(circle,  #750101, #9e001a, #c0001a, #db0016, #ff0000)", border: "5px solid darkred"}} id={trCount.toString() + (index)} className="div" onClick={press}/>
+    let blueDiv = <div style={{ backgroundImage: "radial-gradient(circle, #00007e, #001a9e, #001dc0, #0015cb, #2c00ff)", border: "5px solid darkblue"}} id={trCount.toString() + (index)} className="div" onClick={press}/>
 
 
     if (!row.includes(null)){
-      redDiv = <div style={{ backgroundImage: "radial-gradient(circle, #340101, #630011, #960015, #ca0013, #ff0000)"}} id={trCount.toString() + (index)} className="div" onClick={press} disabled/>
-      blueDiv = <div style={{ backgroundImage: "radial-gradient(circle, #010134, #001164, #001697, #0015cb, #2c00ff)"}} id={trCount.toString() + (index)} className="div" onClick={press} disabled/>
+      redDiv = <div style={{ backgroundImage: "radial-gradient(circle,  #750101, #9e001a, #c0001a, #db0016, #ff0000)", border: "5px solid darkred"}} id={trCount.toString() + (index)} className="div" onClick={press} disabled/>
+      blueDiv = <div style={{ backgroundImage: "radial-gradient(circle, #00007e, #001a9e, #001dc0, #0015cb, #2c00ff#010134, #001164, #001697, #0015cb, #2c00ff)", border: "5px solid darkblue"}} id={trCount.toString() + (index)} className="div" onClick={press} disabled/>
     }
     
     let rows = row.map((x, index) => {
@@ -175,7 +175,7 @@ function Board (props){
       }
       return(
         <td className="td" key={index + 1}>
-          <div style={{ backgroundImage: "radial-gradient(circle, #ffffff, #b9b9b9, #777777, #3b3b3b, #000000)"}} id={trCount.toString() + (index)} className="div" onClick={press}/>
+          <div style={{ }} id={trCount.toString() + (index)} className="div" onClick={press}/>
         </td>
     );
     })
