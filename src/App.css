@@ -2,7 +2,8 @@ body{
     background-color: #252c24;
     background-image: url(./back.jpg)
 }
-h1{
+/* ----------  <Board> ----------- */
+.mainH1{
     position: absolute;
     top: -5px;
     left: 50%;
@@ -16,7 +17,8 @@ h1{
     -webkit-text-stroke: 0.7px #252c24;
 }
 .btn{
-    margin-right: 200px;
+    position: absolute;
+    left: 130px;
     color: white;
     background-color: blue;
     width: 130px;
@@ -32,7 +34,8 @@ h1{
     background-color: darkblue;
 }
 .btnReset{
-    margin-left: 200px;
+    position: absolute;
+    right: 130px;
     color: white;
     background-color: red;
     width: 130px;
@@ -50,33 +53,33 @@ h1{
 .buttons{
     position: absolute;
     width: 700px;
-    top: 100px;
-    left: 53%;
-    transform: translate(-53%, 0%);
+    top: 85px;
+    left: 50%;
+    transform: translate(-50%, 0%);
     
 }
 .points{
     position: absolute;
-    top: 93px;
+    top: 125px;
     left: 50%;
     transform: translate(-50%, 0%);
     color: white;
     font-size: 25px;
     -webkit-text-stroke: 0.5px white;
-    width: 320px;
+    width: 750px;
     text-align: center;
     background-image: linear-gradient(to right bottom, #01460c, #07530d, #10610e, #1a6f0d, #257d0a, #257d0a, #257d0a, #257d0a, #1a6f0d, #10610e, #07530d, #01460c);
     border-radius: 5px;
 }
 .table{
     position: relative;
-    top: 85px;
+    top: 108px;
     left: 50%;
     transform: translate(-50%, 0%) rotate(-90deg) scaleX(-1);
     filter: FlipH;
     width: 600px;
     height: 700px;
-    margin: 10px;
+    margin-top: 10px;
     border-collapse: collapse;
     background-image: linear-gradient(to right bottom, #01460c, #07530d, #10610e, #1a6f0d, #257d0a, #257d0a, #257d0a, #257d0a, #1a6f0d, #10610e, #07530d, #01460c);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -118,3 +121,107 @@ div[disabled]{
 table[disabled]{
     pointer-events: none;
   }
+  .logOutBtn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: blue;
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  }
+  /* -------   <Login>  -------- */
+.loginMain{
+    position: relative;
+    width: 600px;
+    height: 100px;
+    background-image: linear-gradient(to right bottom, #01460c, #07530d, #10610e, #1a6f0d, #257d0a, #257d0a, #257d0a, #257d0a, #1a6f0d, #10610e, #07530d, #01460c);    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border: 5px solid white;
+    border-radius: 10px;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -0%);
+}
+.loginTextInput1{
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 3px;
+    border: none;
+    font-size: 25px;
+    outline: none;
+    color: red;
+}
+.loginTextInput1::placeholder{
+    color: red;
+}
+.loginTextInput2{
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 3px;
+    border: none;
+    font-size: 25px;
+    outline: none;
+    color: blue;
+}
+.loginBtn{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: white;
+    background-color: blue;
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.loginBtn:hover{
+    background-color: darkblue;
+}
+.loginBtn:disabled{
+    background-color: darkblue;
+    color: gray;
+}
+.loginTextInput2::placeholder{
+    color: blue;
+}
+
+.vs{
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: white;
+    font-size: 25px;
+}
+.loginH1{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: white;
+    background-image: linear-gradient(to right bottom, #01460c, #07530d, #10610e, #1a6f0d, #257d0a, #257d0a, #257d0a, #257d0a, #1a6f0d, #10610e, #07530d, #01460c);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    width: 400px;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-text-stroke: 0.7px #252c24;
+}

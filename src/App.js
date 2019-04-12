@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import './App.css';
 
 
-function Board (){
+function Board (props){
   let trCount = 0
   const [player1] = useState(1);
   const [player2] = useState(2);
@@ -62,18 +62,18 @@ function Board (){
     if (x === 1){
       updateColor("red");
       updatePlayer1Points(player1Points + 1);
-      return "Player 1 Wins !!";
+      return (props.name1 + " Wins !!");
     }
     else{
       updateColor("blue");
       updatePlayer2Points(player2Points + 1);
-      return "Player 2 Wins !!";
+      return (props.name2 + " Wins !!");
     }
   }
 
   const checkH = (board) =>{
     for (let r = 3; r < 7; r++) {
-      for (let c = 0; c < 6; c++) {
+      for (const [c] of board.entries()) {
         if (board[r][c]) {
           if (board[r][c] === board[r - 1][c] &&
               board[r][c] === board[r - 2][c] &&
@@ -87,8 +87,8 @@ function Board (){
   }
 
   const checkV = (board) =>{
-    for (let r = 0; r < 7; r++) {
-      for (let c = 0; c < 4; c++) {
+    for (const [r] of board.entries()) {
+      for (const [c] of board.entries()) {
         if (board[r][c]) {
           if (board[r][c] === board[r][c + 1] && 
               board[r][c] === board[r][c + 2] &&
@@ -103,7 +103,7 @@ function Board (){
 
   const checkDR = (board) =>{
     for (let r = 3; r < 7; r++) {
-      for (let c = 0; c < 4; c++) {
+      for (const [c] of board.entries()) {
         if (board[r][c]) {
           if (board[r][c] === board[r - 1][c + 1] &&
               board[r][c] === board[r - 2][c + 2] &&
@@ -132,8 +132,8 @@ function Board (){
   }
 
   const checkDraw = (board) =>{
-    for (let r = 0; r < 7; r++) {
-      for (let c = 0; c < 6; c++) {
+    for (const [r] of board.entries()) {
+      for (const [c] of board.entries()) {
         if (board[r][c] === null) {
           return null;
         }
@@ -187,12 +187,14 @@ function Board (){
     const table = board.map(renderBoard);
     return(
       <>
-      <h1>Connect 4 - Labb 4 AvJs</h1>
+      <Helmet title="Connect 4 - Labb 4 AvJs"/>
+      <h1 className="mainH1">Connect 4 - Labb 4 AvJs</h1>
+      <button className="logOutBtn" onClick={props.onOut}>Log Out</button>
       <div className="buttons">
       <button className="btn" onClick={newBoard}>New Game</button>
       <button className="btnReset" onClick={resetPoints}>Reset</button>
       </div>
-      <div className="points"><b><span style={{color: "red"}}>Player 1 :</span> <span style={{fontSize: "30px"}}>{player1Points}</span> - <span style={{fontSize: "30px"}}>{player2Points}</span> <span style={{color: "blue"}}>: Player 2</span></b></div>
+      <div className="points"><b><span style={{color: "red"}}>{props.name1} :</span> <span style={{fontSize: "30px"}}>{player1Points}</span> - <span style={{fontSize: "30px"}}>{player2Points}</span> <span style={{color: "blue"}}>: {props.name2}</span></b></div>
       <table className="table" disabled={gameOver}>
         <tbody>
           {table}
@@ -202,19 +204,63 @@ function Board (){
       </>
     );
 }
+function Login (props) {
+  const [name1, updateName1] = useState("Player1");
+  const [name2, updateName2] = useState("Player2");
+  const [x, updateX] = useState(false);
+  const [y, updateY] = useState(false);
 
-function App () {
+  const onChange1 = (e) => {
+    
+    updateName1(e.target.value)
+    props.onChange1(e);
+  };
+  const onChange2 = (e) => {
+    
+    updateName2(e.target.value)
+    props.onChange2(e);
+  };
   
-    return (
-      <>
-      <Helmet>
-        <title>Connect 4 - Labb 4 AvJs</title>
-      </Helmet>
-      <div className="App">
-        <Board/>
-      </div>
-      </>
-    );
+  
+  return( 
+  <>
+  <Helmet title="Connect 4 - Login"/>
+  <h1 className="loginH1">Connect 4 - Name Players</h1>
+  <div className="loginMain">
+  <input maxLength="11" className="loginTextInput1" onChange={onChange1} type="text" placeholder={name1}/>
+  <span className="vs"> <b>VS</b> </span>
+  <input maxLength="11" className="loginTextInput2" onChange={onChange2} type="text" placeholder={name2}/><br/>
+  <button className="loginBtn" onClick={props.onLogin} >Play</button>
+  </div>
+  </>
+  );
+}
+
+function App (props) {
+  
+  const [isLoggedIn, updateIsLoggedIn] = useState(false);
+  const [name1, updateName1] = useState("Player1");
+  const [name2, updateName2] = useState("Player2");
+
+  const onChange1 = (e) => {
+    
+    updateName1(e.target.value)
+    
+  };
+  const onChange2 = (e) => {
+    
+    updateName2(e.target.value)
+    
+  };
+
+  const onLogin = () => updateIsLoggedIn(true);
+  const onOut = () => {
+    updateIsLoggedIn(false);
+    updateName1("Player1")
+    updateName2("Player2")
+  }
+    
+  return ( isLoggedIn ? <Board name1={name1} name2={name2} onOut={onOut} /> : <Login onChange1={onChange1} onChange2={onChange2} onLogin={onLogin}/> );
   
 }
 
