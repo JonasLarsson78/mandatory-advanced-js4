@@ -14,6 +14,7 @@ function Board (props){
   const [gameOver, updateGameOver] = useState(false);
   const [message, updateMessage] = useState("");
   const [color, updateColor] = useState("white");
+  const [turn, updateTurn] = useState("red");
 
   useEffect(() =>{
     newBoard();
@@ -24,6 +25,7 @@ function Board (props){
     updateMessage("");
     updateGameOver(false);
     updateColor("white");
+    updateTurn("red")
     let newBoard = [];
     for (let row = 0; row < 7; row++){
       let rows = [];
@@ -37,6 +39,13 @@ function Board (props){
   
 
   const press = (e) =>{
+    if (turn === "red"){
+      updateTurn("blue")
+    }
+    else{
+      updateTurn("red")
+    }
+    
    updatecurrentPlayer(currentPlayer === player1 ? player2 : player1)
     let x = e.target.id.split("");
     
@@ -56,6 +65,7 @@ function Board (props){
     checkDR(board)
     checkDL(board)
     checkDraw(board)
+    
   }
 
   const winMess = (x) =>{
@@ -80,6 +90,7 @@ function Board (props){
               board[r][c] === board[r - 3][c]) {
                 updateGameOver(true);
                 updateMessage(winMess(board[r][c]));
+                updateTurn("black");
           }
         }
       }
@@ -95,6 +106,7 @@ function Board (props){
               board[r][c] === board[r][c + 3]) {
                 updateGameOver(true)
                 updateMessage(winMess(board[r][c]));
+                updateTurn("black");
           }
         }
       }
@@ -110,6 +122,7 @@ function Board (props){
               board[r][c] === board[r - 3][c + 3]) {
                 updateGameOver(true);
                 updateMessage(winMess(board[r][c]));
+                updateTurn("black");
           }
         }
       }
@@ -125,6 +138,7 @@ function Board (props){
               board[r][c] === board[r - 3][c - 3]) {
                 updateGameOver(true)
                 updateMessage(winMess(board[r][c]));
+                updateTurn("black");
           }
         }
       }
@@ -140,7 +154,8 @@ function Board (props){
       }
     }
     updateGameOver(true)
-    updateMessage("Draw !!")   
+    updateMessage("Draw !!") 
+    updateTurn("black");  
   }
   const resetPoints = () =>{
     updatePlayer1Points(0)
@@ -155,7 +170,7 @@ function Board (props){
 
     if (!row.includes(null)){
       redDiv = <div style={{ backgroundImage: "radial-gradient(circle,  #750101, #9e001a, #c0001a, #db0016, #ff0000)", border: "5px solid darkred"}} id={trCount.toString() + (index)} className="div" onClick={press} disabled/>
-      blueDiv = <div style={{ backgroundImage: "radial-gradient(circle, #00007e, #001a9e, #001dc0, #0015cb, #2c00ff#010134, #001164, #001697, #0015cb, #2c00ff)", border: "5px solid darkblue"}} id={trCount.toString() + (index)} className="div" onClick={press} disabled/>
+      blueDiv = <div style={{ backgroundImage: "radial-gradient(circle, #00007e, #001a9e, #001dc0, #0015cb, #2c00ff)", border: "5px solid darkblue"}} id={trCount.toString() + (index)} className="div" onClick={press} disabled/>
     }
     
     let rows = row.map((x, index) => {
@@ -194,6 +209,7 @@ function Board (props){
       <button className="btn" onClick={newBoard}>New Game</button>
       <button className="btnReset" onClick={resetPoints}>Reset</button>
       </div>
+      <div className="turn" style={{backgroundColor: turn}}><b>Turn</b></div>
       <div className="points"><b><span style={{color: "red"}}>{props.name1} :</span> <span style={{fontSize: "30px"}}>{player1Points}</span> - <span style={{fontSize: "30px"}}>{player2Points}</span> <span style={{color: "blue"}}>: {props.name2}</span></b></div>
       <table className="table" disabled={gameOver}>
         <tbody>
@@ -207,8 +223,6 @@ function Board (props){
 function Login (props) {
   const [name1, updateName1] = useState("Player1");
   const [name2, updateName2] = useState("Player2");
-  const [x, updateX] = useState(false);
-  const [y, updateY] = useState(false);
 
   const onChange1 = (e) => {
     
@@ -227,7 +241,7 @@ function Login (props) {
   <Helmet title="Connect 4 - Name Players"/>
   <h1 className="loginH1">Connect 4 - Name Players</h1>
   <div className="loginMain">
-  <input maxLength="11" className="loginTextInput1" onChange={onChange1} type="text" placeholder={name1} defaultValue="Player1"/>
+  <input maxLength="11" className="loginTextInput1" onChange={onChange1} type="text" placeholder={name1}/>
   <span className="vs"> <b>VS</b> </span>
   <input maxLength="11" className="loginTextInput2" onChange={onChange2} type="text" placeholder={name2}/><br/>
   <button className="loginBtn" onClick={props.onLogin} >Play</button>

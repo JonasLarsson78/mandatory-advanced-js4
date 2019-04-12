@@ -137,6 +137,18 @@ table[disabled]{
     cursor: pointer;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   }
+  .turn{
+      position: absolute;
+      top: 90px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      width: 100px;
+      height: 25px;
+      border-radius: 5px;
+      text-align: center;
+      color: white;
+      border: 2px dashed white;
+  }
   /* -------   <Login>  -------- */
 .loginMain{
     position: relative;
