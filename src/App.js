@@ -224,10 +224,10 @@ function Login (props) {
   
   return( 
   <>
-  <Helmet title="Connect 4 - Login"/>
+  <Helmet title="Connect 4 - Name Players"/>
   <h1 className="loginH1">Connect 4 - Name Players</h1>
   <div className="loginMain">
-  <input maxLength="11" className="loginTextInput1" onChange={onChange1} type="text" placeholder={name1}/>
+  <input maxLength="11" className="loginTextInput1" onChange={onChange1} type="text" placeholder={name1} defaultValue="Player1"/>
   <span className="vs"> <b>VS</b> </span>
   <input maxLength="11" className="loginTextInput2" onChange={onChange2} type="text" placeholder={name2}/><br/>
   <button className="loginBtn" onClick={props.onLogin} >Play</button>
