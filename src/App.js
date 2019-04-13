@@ -23,7 +23,8 @@ function App () {
 
   const onOut = () => { updateIsLoggedIn(false);
                         updateName1("Player1");
-                        updateName2("Player2")
+                        updateName2("Player2");
+                        updateAiOn(false);
                       };
 
   return (
