@@ -8,9 +8,16 @@ function App () {
   const [isLoggedIn, updateIsLoggedIn] = useState(false);
   const [name1, updateName1] = useState("Player1");
   const [name2, updateName2] = useState("Player2");
+  const [aiOn, updateAiOn] = useState(false)
+
 
   const onChange1 = (e) => updateName1(e.target.value);
   const onChange2 = (e) => updateName2(e.target.value);
+
+  const onChangeAiOn = () => updateAiOn(true);  
+  const onChangeAiOff = () => updateAiOn(false);
+
+  
 
   const onLogin = () => updateIsLoggedIn(true);
 
@@ -20,7 +27,7 @@ function App () {
                       };
 
   return (
-    isLoggedIn ? <Connect4 name1={name1} name2={name2} onOut={onOut} /> : <Name onChange1={onChange1} onChange2={onChange2} onLogin={onLogin}/> 
+    isLoggedIn ? <Connect4 ai={aiOn} name1={name1} name2={name2} onOut={onOut} /> : <Name onChangeAiOff={onChangeAiOff} onChangeAiOn={onChangeAiOn} onChange1={onChange1} onChange2={onChange2} onLogin={onLogin}/> 
     );
 };
 

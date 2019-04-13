@@ -16,9 +16,11 @@ function Connect4 (props){
     const [color, updateColor] = useState("white");
     const [turn, updateTurn] = useState("red");
     const [playerName, updatePlayerName] = useState("");
+    const [ai, updateAi] = useState(false)
   
     useEffect(() =>{
       newBoard();
+      updateAi(props.ai);
     }, [])
   
     const newBoard = () =>{
@@ -38,6 +40,20 @@ function Connect4 (props){
       }
       updateBoard(newBoard) ;
     }
+    const aiPlayer = () =>{
+      if (currentPlayer === 2){
+        console.log("AI Turn");
+        let aiMoveCol = Math.floor(Math.random() * 7);
+        console.log(aiMoveCol)
+        const table = [...board];
+      let newArr = table[aiMoveCol];
+      let addLast = newArr.lastIndexOf(null);
+      newArr[addLast] = player2  
+      updateBoard(table)
+      checkAll(board)
+
+      }
+    }
     
   
     const press = (e) =>{
@@ -49,8 +65,10 @@ function Connect4 (props){
         updateTurn("red")
         updatePlayerName(props.name1)
       }
-      
-     updatecurrentPlayer(currentPlayer === player1 ? player2 : player1)
+      if (ai === false){
+        updatecurrentPlayer(currentPlayer === player1 ? player2 : player1)
+      }
+     
       let x = e.target.id.split("");
       
       let col = x[0];
@@ -63,7 +81,13 @@ function Connect4 (props){
       newArr[addLast] = currentPlayer === player1 ? player2 : player1;
   
       updateBoard(table)
-      checkAll(board)
+
+      if (ai === true){
+        aiPlayer()
+      }
+      else{
+        checkAll(board)
+      }
     }
 
     const winMess = (x) =>{
@@ -174,6 +198,7 @@ function Connect4 (props){
     }
   
     const renderBoard = (row, index) =>{
+      
       let redDiv = <div id={trCount.toString() + (index)} className="div redDiv" onClick={press}/>
       let blueDiv = <div id={trCount.toString() + (index)} className="div blueDiv" onClick={press}/>
   
@@ -210,6 +235,7 @@ function Connect4 (props){
       );
     }
       const table = board.map(renderBoard);
+      console.log(board)
       return(
         <>
         <Helmet title="Connect 4 - Labb 4 AvJs"/>

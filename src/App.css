@@ -248,3 +248,10 @@ table[disabled]{
     border-radius: 5px;
     -webkit-text-stroke: 0.7px #252c24;
 }
+.loginAi{
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    color: white;
+    font-size: 18px;
+}
