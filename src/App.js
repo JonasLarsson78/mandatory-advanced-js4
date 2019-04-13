@@ -14,10 +14,13 @@ function App () {
   const onChange1 = (e) => updateName1(e.target.value);
   const onChange2 = (e) => updateName2(e.target.value);
 
-  const onChangeAiOn = () => updateAiOn(true);  
-  const onChangeAiOff = () => updateAiOn(false);
+  const onChangeAiOn = () => { updateAiOn(true); 
+                               updateName2("Computer");
+                             };
 
-  
+  const onChangeAiOff = () => { updateAiOn(false);
+                                updateName2("Player2");
+                              };
 
   const onLogin = () => updateIsLoggedIn(true);
 

@@ -72,9 +72,9 @@ function Connect4 (props){
       let x = e.target.id.split("");
       
       let col = x[0];
-      let row = x[1];
-        console.log("Col " + col); /* Vilken kolumm */ 
-        console.log("Row " + row); /* och rad jag klikar på */
+      //let row = x[1];
+        //console.log("Col " + col); /* Vilken kolumm */ 
+        //console.log("Row " + row); /* och rad jag klikar på */
       const table = [...board];
       let newArr = table[col];
       let addLast = newArr.lastIndexOf(null);
@@ -235,7 +235,6 @@ function Connect4 (props){
       );
     }
       const table = board.map(renderBoard);
-      console.log(board)
       return(
         <>
         <Helmet title="Connect 4 - Labb 4 AvJs"/>
