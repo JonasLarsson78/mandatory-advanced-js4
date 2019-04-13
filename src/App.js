@@ -13,11 +13,12 @@ function App (props) {
   const onChange2 = (e) => updateName2(e.target.value);
 
   const onLogin = () => updateIsLoggedIn(true);
-  const onOut = () => {
-    updateIsLoggedIn(false);
-    updateName1("Player1");
-    updateName2("Player2");
-  }
+  
+  const onOut = () => { updateIsLoggedIn(false);
+                        updateName1("Player1");
+                        updateName2("Player2")
+                      };
+
   return (
     isLoggedIn ? <Connect4 name1={name1} name2={name2} onOut={onOut} /> : <Name onChange1={onChange1} onChange2={onChange2} onLogin={onLogin}/> 
     );
