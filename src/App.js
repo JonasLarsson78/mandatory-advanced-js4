@@ -3,7 +3,7 @@ import Connect4 from './components/Connec4.js'
 import Name from './components/Name.js';
 import './App.css';
 
-function App (props) {
+function App () {
   
   const [isLoggedIn, updateIsLoggedIn] = useState(false);
   const [name1, updateName1] = useState("Player1");
@@ -13,7 +13,7 @@ function App (props) {
   const onChange2 = (e) => updateName2(e.target.value);
 
   const onLogin = () => updateIsLoggedIn(true);
-  
+
   const onOut = () => { updateIsLoggedIn(false);
                         updateName1("Player1");
                         updateName2("Player2")

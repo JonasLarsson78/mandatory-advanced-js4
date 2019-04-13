@@ -1,3 +1,14 @@
+## AvJs Labb 4 - Connect 4
+
+Name.js - Name players.
+Connect4.js - The game.
+
+Points:
+1 point for win and both player 1 point for draw.
+
+----------------------------------------------------------------------------------
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
