@@ -54,24 +54,18 @@ function Connect4 (props){
       let x = e.target.id.split("");
       
       let col = x[0];
-      /* let row = x[1];
-      console.log("Col " + col);
-      console.log("Row " + row); */
+      let row = x[1];
+        console.log("Col " + col); /* Vilken kolumm */ 
+        console.log("Row " + row); /* och rad jag klikar på */
       const table = [...board];
       let newArr = table[col];
       let addLast = newArr.lastIndexOf(null);
       newArr[addLast] = currentPlayer === player1 ? player2 : player1;
   
       updateBoard(table)
-  
-      checkH(board)
-      checkV(board)
-      checkDR(board)
-      checkDL(board)
-      checkDraw(board)
-      
+      checkAll(board)
     }
-  
+
     const winMess = (x) =>{
       if (x === 1){
         updateColor("red");
@@ -168,6 +162,11 @@ function Connect4 (props){
       updateTurn("black");
       updatePlayerName("");  
     }
+
+    const checkAll = (board) =>{
+        return (checkH(board) || checkV(board) || checkDR(board) || checkDL(board) || checkDraw(board));
+    }
+
     const resetPoints = () =>{
       updatePlayer1Points(0)
       updatePlayer2Points(0)

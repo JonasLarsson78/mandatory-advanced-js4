@@ -15,7 +15,6 @@ function Name (props) {
       props.onChange2(e);
     };
     
-    
     return( 
     <>
     <Helmet title="Connect 4 - Name Players"/>
