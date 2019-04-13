@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Connect4 from './Connec4.js'
-import Name from './Name.js';
+import Connect4 from './components/Connec4.js'
+import Name from './components/Name.js';
 import './App.css';
 
 function App (props) {

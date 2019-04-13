@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Helmet} from "react-helmet";
-import './App.css';
+import '../App.css';
 
 function Name (props) {
     const [name1, updateName1] = useState("Player1");
