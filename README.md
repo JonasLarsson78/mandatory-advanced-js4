@@ -1,10 +1,13 @@
 ## AvJs Labb 4 - Connect 4
 
 Name.js - Name players.<br>
-Connect4.js - The game.
+Connect4.js - The game.<br><br>
 
-Points:
-1 point for win and both player 1 point for draw.
+Points:<br>
+1 point for win and both player 1 point for draw.<br>
+
+AI:<br>
+Added a stupid Ai.
 
 ----------------------------------------------------------------------------------
 
