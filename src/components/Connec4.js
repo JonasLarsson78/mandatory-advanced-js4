@@ -51,12 +51,10 @@ function Connect4 (props){
       newArr[addLast] = player2  
       updateBoard(table)
       checkAll(board)
-
       }
     }
-    
-  
-    const press = (e) =>{
+
+    const turnColor = () => {
       if (turn === "red"){
         updateTurn("blue")
         updatePlayerName(props.name2)
@@ -65,6 +63,10 @@ function Connect4 (props){
         updateTurn("red")
         updatePlayerName(props.name1)
       }
+    }
+  
+    const press = (e) =>{
+      
       if (ai === false){
         updatecurrentPlayer(currentPlayer === player1 ? player2 : player1)
       }
@@ -84,9 +86,11 @@ function Connect4 (props){
 
       if (ai === true){
         aiPlayer()
+        
       }
       else{
         checkAll(board)
+        turnColor()
       }
     }
 
