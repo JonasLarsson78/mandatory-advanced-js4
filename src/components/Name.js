@@ -25,16 +25,16 @@ function Name (props) {
       props.onChangeAiOff()
       updateName2("Player2")
     }
-    
+    const handleFocus = (event) => event.target.select();
     
     return( 
     <>
     <Helmet title="Connect 4 - Name Players"/>
     <h1 className="loginH1">Connect 4 - Name Players</h1>
     <div className="loginMain">
-    <input maxLength="11" className="loginTextInput1" value={name1} onChange={onChange1} type="text"/>
+    <input maxLength="11" className="loginTextInput1" value={name1} onClick={handleFocus} onChange={onChange1} type="text"/>
     <span className="vs"> <b>VS</b> </span>
-    <input maxLength="11" className="loginTextInput2" value={name2} onChange={onChange2} type="text" disabled={aiOn}/><br/>
+    <input maxLength="11" className="loginTextInput2" value={name2} onClick={handleFocus} onChange={onChange2} type="text" disabled={aiOn}/><br/>
     <div className="loginAi">
     <input onChange={onChangeAiOff} type="radio" name="ai" defaultChecked={true}/><label>AI Off </label>
     <input onChange={onChangeAiOn} type="radio" name="ai"/><label>AI On</label>
