@@ -32,9 +32,9 @@ function Name (props) {
     <Helmet title="Connect 4 - Name Players"/>
     <h1 className="loginH1">Connect 4 - Name Players</h1>
     <div className="loginMain">
-    <input maxLength="11" className="loginTextInput1" onChange={onChange1} type="text" placeholder={name1}/>
+    <input maxLength="11" className="loginTextInput1" value={name1} onChange={onChange1} type="text"/>
     <span className="vs"> <b>VS</b> </span>
-    <input maxLength="11" className="loginTextInput2" onChange={onChange2} type="text" placeholder={name2} disabled={aiOn}/><br/>
+    <input maxLength="11" className="loginTextInput2" value={name2} onChange={onChange2} type="text" disabled={aiOn}/><br/>
     <div className="loginAi">
     <input onChange={onChangeAiOff} type="radio" name="ai" defaultChecked={true}/><label>AI Off </label>
     <input onChange={onChangeAiOn} type="radio" name="ai"/><label>AI On</label>
