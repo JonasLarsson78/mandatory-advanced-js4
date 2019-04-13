@@ -240,6 +240,7 @@ function Connect4 (props){
         <Helmet title="Connect 4 - Labb 4 AvJs"/>
         <h1 className="mainH1">Connect 4 - Labb 4 AvJs</h1>
         <button className="logOutBtn" onClick={props.onOut}>Log Out</button>
+        <div className="turnName">Turn</div>
         <div className="buttons">
         <button className="btn" onClick={newBoard}>New Game</button>
         <button className="btnReset" onClick={resetPoints}>Reset</button>

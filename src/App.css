@@ -158,6 +158,13 @@ table[disabled]{
       color: white;
       border: 2px dashed white;
   }
+  .turnName{
+      position: absolute;
+      top: 65px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      color: white;
+  }
   /* -------   <Login>  -------- */
 .loginMain{
     position: relative;
