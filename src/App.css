@@ -104,6 +104,15 @@ body{
     border: 5px solid white;
     cursor: pointer;
 }
+.redDiv{
+    background-image: radial-gradient(circle,  #750101, #9e001a, #c0001a, #db0016, #ff0000);
+    border: 5px solid darkred;    
+}
+.blueDiv{
+    background-image: radial-gradient(circle, #00007e, #001a9e, #001dc0, #0015cb, #2c00ff);
+    border: 5px solid darkblue;
+}
+
 .message{
     position: absolute;
     bottom: 40%;
@@ -176,6 +185,7 @@ table[disabled]{
 }
 .loginTextInput1::placeholder{
     color: red;
+    text-align: center;
 }
 .loginTextInput2{
     position: absolute;
@@ -189,6 +199,10 @@ table[disabled]{
     font-size: 25px;
     outline: none;
     color: blue;
+}
+.loginTextInput2::placeholder{
+    color: blue;
+    text-align: center;
 }
 .loginBtn{
     position: absolute;
@@ -213,10 +227,6 @@ table[disabled]{
     background-color: darkblue;
     color: gray;
 }
-.loginTextInput2::placeholder{
-    color: blue;
-}
-
 .vs{
     position: absolute;
     top: 18px;
