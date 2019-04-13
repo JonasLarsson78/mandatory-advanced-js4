@@ -1,6 +1,6 @@
 ## AvJs Labb 4 - Connect 4
 
-Name.js - Name players.
+Name.js - Name players.<br>
 Connect4.js - The game.
 
 Points:
