@@ -68,27 +68,20 @@ function Connect4 (props){
       if (ai === false){
         updatecurrentPlayer(currentPlayer === player1 ? player2 : player1)
       }
-     
-      let x = e.target.id.split("");
       
-      let col = x[0];
-      //let row = x[1];
-        //console.log("Col " + col); /* Vilken kolumm */ 
-        //console.log("Row " + row); /* och rad jag klikar på */
+      let col = e.target.dataset.col;
       const table = [...board];
-      let newArr = table[col];
-      let addLast = newArr.lastIndexOf(null);
-      newArr[addLast] = currentPlayer === player1 ? player2 : player1;
+      let newBoard = table[col];
+      let addLast = newBoard.lastIndexOf(null);
+      newBoard[addLast] = currentPlayer === player1 ? player2 : player1;
   
       updateBoard(table)
       turnColor()
       if (ai === true){
         aiPlayer()
-        
       }
       else{
         checkAll(board)
-        
       }
     }
 
@@ -201,13 +194,13 @@ function Connect4 (props){
   
     const renderBoard = (row, index) =>{
       
-      let redDiv = <div id={trCount.toString() + (index)} className="div redDiv" onClick={press}/>
-      let blueDiv = <div id={trCount.toString() + (index)} className="div blueDiv" onClick={press}/>
+      let redDiv = <div data-col={trCount.toString()} className="div redDiv" onClick={press}/>
+      let blueDiv = <div data-col={trCount.toString()} className="div blueDiv" onClick={press}/>
   
   
       if (!row.includes(null)){
-        redDiv = <div id={trCount.toString() + (index)} className="div redDiv" onClick={press} disabled/>
-        blueDiv = <div id={trCount.toString() + (index)} className="div blueDiv" onClick={press} disabled/>
+        redDiv = <div data-col={trCount.toString()} className="div redDiv" onClick={press} disabled/>
+        blueDiv = <div data-col={trCount.toString()} className="div blueDiv" onClick={press} disabled/>
       }
       
       let rows = row.map((x, index) => {
@@ -227,7 +220,7 @@ function Connect4 (props){
         }
         return(
           <td className="td" key={index + 1}>
-            <div style={{ }} id={trCount.toString() + (index)} className="div" onClick={press}/>
+            <div data-col={trCount.toString()} className="div" onClick={press}/>
           </td>
       );
       })
