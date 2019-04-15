@@ -25,7 +25,7 @@ function Name (props) {
       props.onChangeAiOff()
       updateName2("Player2")
     }
-    const handleFocus = (event) => event.target.select();
+    const handleFocus = (e) => e.target.select();
     
     return( 
     <>
@@ -36,10 +36,11 @@ function Name (props) {
     <span className="vs"> <b>VS</b> </span>
     <input maxLength="11" className="loginTextInput2" value={name2} onClick={handleFocus} onChange={onChange2} type="text" disabled={aiOn}/><br/>
     <div className="loginAi">
+    <label><b>Stupid AI:</b></label>
     <input onChange={onChangeAiOff} type="radio" name="ai" defaultChecked={true}/><label>AI Off </label>
     <input onChange={onChangeAiOn} type="radio" name="ai"/><label>AI On</label>
     </div>
-    <button className="loginBtn" onClick={props.onLogin} >Play</button>
+    <button className="loginBtn" onClick={props.onLogin}>Play</button>
     </div>
     </>
     );

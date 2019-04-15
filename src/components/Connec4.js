@@ -42,9 +42,7 @@ function Connect4 (props){
     }
     const aiPlayer = () =>{
       if (currentPlayer === 2){
-        console.log("AI Turn");
         let aiMoveCol = Math.floor(Math.random() * 7);
-        console.log(aiMoveCol)
         const table = [...board];
       let newArr = table[aiMoveCol];
       let addLast = newArr.lastIndexOf(null);
@@ -83,14 +81,14 @@ function Connect4 (props){
       newArr[addLast] = currentPlayer === player1 ? player2 : player1;
   
       updateBoard(table)
-
+      turnColor()
       if (ai === true){
         aiPlayer()
         
       }
       else{
         checkAll(board)
-        turnColor()
+        
       }
     }
 

@@ -22,7 +22,15 @@ function App () {
                                 updateName2("Player2");
                               };
 
-  const onLogin = () => updateIsLoggedIn(true);
+  const onLogin = () => {
+                          updateIsLoggedIn(true);
+                          if (name1 === ""){
+                            updateName1("Player1");
+                          }
+                          if (name2 === ""){
+                            updateName2("Player2");
+                          }
+                        }
 
   const onOut = () => { updateIsLoggedIn(false);
                         updateName1("Player1");
