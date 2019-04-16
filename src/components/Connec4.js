@@ -40,6 +40,7 @@ function Connect4 (props){
       }
       updateBoard(newBoard) ;
     }
+    
     const aiPlayer = () =>{
       if (currentPlayer === 2){
         let aiMoveCol = Math.floor(Math.random() * 7);
@@ -53,7 +54,7 @@ function Connect4 (props){
     }
 
     const turnColor = () => {
-      if (turn === "red"){
+      if (turn === "red" && ai === false){
         updateTurn("blue")
         updatePlayerName(props.name2)
       }
