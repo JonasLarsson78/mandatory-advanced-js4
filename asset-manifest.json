@@ -1,14 +1,14 @@
 {
-  "main.css": "/JonasLarsson78/mandatory-advanced-js4/static/css/main.a7f269a4.chunk.css",
-  "main.js": "/JonasLarsson78/mandatory-advanced-js4/static/js/main.f18e226c.chunk.js",
-  "main.js.map": "/JonasLarsson78/mandatory-advanced-js4/static/js/main.f18e226c.chunk.js.map",
-  "runtime~main.js": "/JonasLarsson78/mandatory-advanced-js4/static/js/runtime~main.10a5f7f7.js",
-  "runtime~main.js.map": "/JonasLarsson78/mandatory-advanced-js4/static/js/runtime~main.10a5f7f7.js.map",
-  "static/js/2.5f4c24c4.chunk.js": "/JonasLarsson78/mandatory-advanced-js4/static/js/2.5f4c24c4.chunk.js",
-  "static/js/2.5f4c24c4.chunk.js.map": "/JonasLarsson78/mandatory-advanced-js4/static/js/2.5f4c24c4.chunk.js.map",
-  "index.html": "/JonasLarsson78/mandatory-advanced-js4/index.html",
-  "precache-manifest.d10a67270f8ca7085570632264036c65.js": "/JonasLarsson78/mandatory-advanced-js4/precache-manifest.d10a67270f8ca7085570632264036c65.js",
-  "service-worker.js": "/JonasLarsson78/mandatory-advanced-js4/service-worker.js",
-  "static/css/main.a7f269a4.chunk.css.map": "/JonasLarsson78/mandatory-advanced-js4/static/css/main.a7f269a4.chunk.css.map",
-  "static/media/App.css": "/JonasLarsson78/mandatory-advanced-js4/static/media/back_90_flip.3a44bd4a.jpg"
+  "main.css": "/mandatory-advanced-js4/static/css/main.9454f210.chunk.css",
+  "main.js": "/mandatory-advanced-js4/static/js/main.1acf37f8.chunk.js",
+  "main.js.map": "/mandatory-advanced-js4/static/js/main.1acf37f8.chunk.js.map",
+  "runtime~main.js": "/mandatory-advanced-js4/static/js/runtime~main.78de8069.js",
+  "runtime~main.js.map": "/mandatory-advanced-js4/static/js/runtime~main.78de8069.js.map",
+  "static/js/2.5f4c24c4.chunk.js": "/mandatory-advanced-js4/static/js/2.5f4c24c4.chunk.js",
+  "static/js/2.5f4c24c4.chunk.js.map": "/mandatory-advanced-js4/static/js/2.5f4c24c4.chunk.js.map",
+  "index.html": "/mandatory-advanced-js4/index.html",
+  "precache-manifest.023c21d33e3b7bbcd6cd36431ceb3b72.js": "/mandatory-advanced-js4/precache-manifest.023c21d33e3b7bbcd6cd36431ceb3b72.js",
+  "service-worker.js": "/mandatory-advanced-js4/service-worker.js",
+  "static/css/main.9454f210.chunk.css.map": "/mandatory-advanced-js4/static/css/main.9454f210.chunk.css.map",
+  "static/media/App.css": "/mandatory-advanced-js4/static/media/back_90_flip.3a44bd4a.jpg"
 }
